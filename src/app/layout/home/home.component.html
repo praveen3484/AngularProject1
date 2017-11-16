@@ -1,0 +1,38 @@
+<div *ngIf="!isThankYouVisible">
+    <div id="back" class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        
+          <div><img src="https://mdbootstrap.com/img/Photos/Avatars/img(7).jpg" alt="Contact Person" id="profile"></div>
+          
+      
+          <div class="jumbotron">
+          <form [formGroup]="myForm" (ngSubmit)="OnSubmit(myForm.value)" method="POST" novalidate>
+                  <p class="h5 text-center mb-4">Sign in</p>
+                  <div *ngIf="errorData"  >
+                      <p  style="color: red;">{{errorStatus}}: {{errorData}}</p>
+                  </div>        
+                  <!-- Your email -->
+                  <div class="md-form">
+                      <i class="fa fa-envelope prefix grey-text"></i>
+                      <input type="text" id="defaultForm-email" class="form-control" placeholder="abc@xyz.com" name="Email" email formControlName ="Email" >
+                      <span *ngIf="Email.errors && (Email.dirty || myForm.submitted) && Email.errors.required"  class="alert alert-danger"  >Email Please</span>                
+                      <label for="defaultForm-email"></label>
+                  </div>
+                  <!-- Your password -->
+                  <div class="md-form">
+                      <i class="fa fa-lock prefix grey-text"></i>
+                      <input type="password" id="defaultForm-pass" class="form-control" name="Password" placeholder="Password" formControlName ="Password">
+                      <label for="defaultForm-pass"></label>
+                  </div>
+              
+                  <div class="text-center">
+                      <button class="btn btn-default" type="submit" >Login</button>
+                  </div>
+              </form>
+          
+          </div>
+      
+      </div>   
+</div>
+<div *ngIf="isThankYouVisible">
+    <h1 style="color: blue;">Thank You!!!</h1>
+</div>

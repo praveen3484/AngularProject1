@@ -1,0 +1,56 @@
+<div id="back" class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+    <div><img src="https://mdbootstrap.com/img/Photos/Avatars/img(7).jpg" alt="Contact Person" id="profile"></div>
+    <div *ngIf="errorData">
+        <p style="color:red;">{{errorStatus}}: {{errorData}}</p>
+    </div>
+    <div class="jumbotron" >
+
+    <!--Register form-->
+<form [formGroup]="myForm" (ngSubmit)="Register(myForm.value)" method="POST" novalidate>
+    <p class="h5 text-center mb-4">Sign up</p>
+    <!--orangeForm-name  -->
+    <div class="md-form">
+        <i class="fa fa-user prefix grey-text"></i>
+         <input type="text" id="name" class="form-control" name="name" formControlName="name" mdbActive>
+        <span *ngIf="name.errors && (name.dirty || myForm.submitted) && name.errors.required" class="alert alert-danger "  >Name Please</span>
+        <label for="name"></label>
+        <!-- Your name -->
+    </div>
+    <!-- orangeForm-email -->
+    <div class="md-form">
+        <i class="fa fa-envelope prefix grey-text"></i>
+        <input type="email" id="Email" name="Email" class="form-control" formControlName="Email" email mdbActive>
+        <span *ngIf="Email.errors && (Email.dirty || myForm.submitted) && Email.errors.required" class="alert alert-danger"  >Email Please</span>
+        <label for="Email"></label>
+        <!-- Your email -->
+    </div>
+    <!-- orangeForm-pass -->
+    <div class="md-form">
+        <i class="fa fa-lock prefix grey-text"></i>
+        <input type="Password" id="Password" class="form-control" name="Password" formControlName = "Password" mdbActive>
+        <span *ngIf="Password.errors && (Password.dirty || myForm.submitted) && Password.errors.required" class="alert alert-danger"  >Password Required</span>
+        <label for="Password"></label>
+        <!-- Your password -->
+    </div>
+    <!-- defaultForm-pass -->
+    <div class="md-form">
+        <i class="fa fa-lock prefix grey-text"></i>
+        <input type="password" id="confirmPassword" name="confirmPassword" class="form-control" formControlName="confirmPassword" mdbActive>
+        <span *ngIf="confirmPassword.errors && (confirmPassword.dirty || myForm.submitted) && confirmPassword.errors.required" class="alert alert-danger alignment">Invalid Confirm Password</span>
+        <label for="confirmPassword"></label>
+        <!-- Confirm password -->
+    </div>
+
+    <div class="text-center">
+        <button class="btn btn-deep-orange waves-light" type="submit" [disabled]="!myForm.valid" mdbRippleRadius>Sign up</button>
+    </div>
+
+</form>
+<!--/Register form-->
+    </div>
+
+</div>
+
+
+<

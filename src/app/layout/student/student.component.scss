@@ -1,0 +1,37 @@
+
+@media only screen and (min-width: 500px) {
+    .jumbotron {
+      position: relative;
+      display: block;
+      margin: 0 auto;
+      left: 0;
+      right: 0;
+      width: 30%;
+      height: 70%;
+    }
+  }
+  #back
+  {
+    position: relative;
+    background-image: url(https://mdbootstrap.com/img/Photos/Others/img%20%2844%29.jpg) ;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: 0 auto;
+    left:0;
+    right: 0;
+    height: 630px;
+    
+  }
+  
+  #profile
+  {
+    position: relative;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 10px;
+    left: auto;
+    right: auto;
+    height: 130px;
+    border-radius:50%;
+    align-self: center; 
+  }
